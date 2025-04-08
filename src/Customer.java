@@ -6,12 +6,12 @@ public class Customer extends User {
     private ArrayList<Order> orders = new ArrayList<>();
 
     // Constructor for admin
-    Customer(int id, String name, String email, String password) {
+    public Customer(int id, String name, String email, String password) {
         super(id, name, email, password);
     }
 
     public void placeOrder(Order order) {
-
+        orders.add(order);
     }
 
 

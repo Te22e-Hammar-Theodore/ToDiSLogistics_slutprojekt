@@ -5,6 +5,7 @@ public class User {
     protected String name;
     protected String email;
     protected String password;
+    protected boolean isLoggedIn;
 
     // Constructor for User
     User(int id, String name, String email, String password) {
@@ -55,12 +56,21 @@ public class User {
     }
 
     // Method for logging in
-    public void login(String email, String password) {
-
+    public boolean login(String email, String password) {
+        if (this.email.equals(email) && this.password.equals(password)) {
+            isLoggedIn = true;
+            return true;
+        }
+        return false;
     }
 
     // Method for logging out
     public void logout() {
+        isLoggedIn = false;
+    }
 
+    // Method for
+    public boolean isLoggedIn() {
+        return isLoggedIn;
     }
 }
